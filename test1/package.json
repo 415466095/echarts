@@ -1,0 +1,8 @@
+{
+  "name": "test1",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "echarts": "^5.0.2"
+  }
+}

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				background-color: #e1e0d0;
+				/* background:#232323 url(../images/bg1_HZ.jpg) no-repeat fixed center top; */
+				background-size:100% 100% ;
+			}
+			
+			.content {
+				/* height: 100%; */
+				width: 220px;
+				background-color: rgba(57, 65, 84, 0.9);
+				position: fixed;
+				padding: 70px 50px;
+			
+				float: left;
+			}
+			
+			.content a {
+				text-decoration: none;
+				margin-bottom: 30px;
+				color: #cfcfcf;
+			}
+			
+			.content a p {
+				font-weight: bold;
+				font-family: "微软雅黑";
+				font-size: large;
+				margin-bottom: 15px;
+				margin-top: 20px;
+			}
+			
+			.content a .inner {
+				list-style-image: url(../images/p.png);
+				margin-left: 40px;
+			}
+			
+			.content a:hover {
+				background-color: #69B0FF;
+				color: #f5f5f5;
+			}
+			
+			.content a:active {
+				background-color: brown;
+			}
+			
+			.main {
+				float: left;
+				clear: both;
+				margin: 10px 0 20px 340px;
+				/* position: absolute; */
+			
+			}
+			.main .text{
+				background-color: rgba(225, 224, 208, 0.9);
+				/* background-color: #00FFFF; */
+				width: 80%;
+				margin: 20px auto;
+				line-height: 30px;
+				font-family: "宋体";
+				letter-spacing: 5px;
+				font-size: 20px;
+				font-weight: 500;
+				padding: 60px 80px;
+				border: 3px groove #df8ad0;
+			}
+			.main .title{
+				width: 400px;
+				height: 80px;
+				background: url(../images/title.png) no-repeat center;
+				background-size:380px 90px  ;
+				background-position: 0 0;
+				/* color: #342f2b; */
+			}
+			
+		</style>
+		<script>
+			window.onload = function() {
+				var cont = document.getElementsByClassName('content')
+				var main = document.getElementsByClassName('main')
+				cont[0].style.height = (window.innerHeight - 140) + 'px';
+				main[0].style.marginLeft = (cont[0].offsetWidth + 50) + 'px';
+				main[0].style.height = (window.innerHeight - 40) + 'px';
+				main[0].style.width = (window.innerWidth - cont[0].offsetWidth - 100) + 'px';
+				// alert(cont[0].offsetWidth|document.body.scrollHeight);
+			};
+		</script>
+	</head>
+	<body>
+<!--		<div class="content">-->
+<!--			<div id="mainp">-->
+<!--				<a href="">-->
+<!--					<br />-->
+<!--					<p>模块介绍</p>-->
+<!--				</a>-->
+<!--			</div>-->
+<!--			<br />-->
+<!--			<hr style="height:1px;border:none;border-top:1px dashed #bfbf60;" />-->
+<!--			<div>-->
+<!--				<a href="">-->
+<!--					<p>GDP统计分析</p>-->
+<!--					<ul class="inner">-->
+<!--						<li>2020年中国各省GDP分布热力图</li>-->
+<!--						<li>2019年未常驻人口与GDP分析图</li>-->
+<!--						<li>2019年与2020年GDP对比图</li>-->
+<!--					</ul>-->
+<!--				</a>-->
+<!--			</div>-->
+<!--			<br />-->
+<!--			<hr style="height:1px;border:none;border-top:1px dashed #bfbf60;" />-->
+<!--			<div>-->
+<!--				<a href="{{ url_for('static',filename='GDP.html') }}" target="_blank">-->
+<!--					<p>新春淘宝化妆品销售概况</p>-->
+<!--					<ul class="inner">-->
+<!--						<li>2月中国化妆品销售地图</li>-->
+<!--						<li>各地区24小时销售情况折线图</li>-->
+<!--						<li>化妆品贩卖价格区间漏斗图展示</li>-->
+<!--					</ul>-->
+<!--				</a>-->
+<!--			</div>-->
+<!--			<br />-->
+<!--			<hr style="height:1px;border:none;border-top:1px dashed #bfbf60;" />-->
+<!--			<div>-->
+<!--				<a href="">-->
+<!--					&lt;!&ndash; <br /> &ndash;&gt;-->
+<!--					<p>旅游美食词云</p>-->
+<!--				</a>-->
+<!--			</div>-->
+<!--		</div>-->
+<div class="content">
+			<div id="mainp">
+				<a href="">
+					<br />
+					<a href="{{ url_for('index') }}" target="_blank">
+					<p>模块介绍</p>
+						</a>
+					<br />
+				</a>
+			</div>
+			<br />
+			<hr style="height:1px;border:none;border-top:1px dashed #bfbf60;" />
+			<div>
+				<a href="{{ url_for('gdp') }}" target="_blank">
+					<p>GDP统计分析</p>
+					<ul class="inner">
+						<li>2020年中国各省GDP分布热力图</li>
+						<li>2019年未常驻人口与GDP分析图</li>
+						<li>2019年与2020年GDP对比图</li>
+					</ul>
+				</a>
+			</div>
+			<br />
+			<hr style="height:1px;border:none;border-top:1px dashed #bfbf60;" />
+			<div>
+<!--			<a href="../static/GDP.html" target="_blank">-->
+				<a href="{{ url_for('index1') }}" rel="external nofollow">
+					<p>新春淘宝化妆品销售概况</p>
+					<ul class="inner">
+						<li>2月中国化妆品销售地图</li>
+						<li>各地区24小时销售情况折线图</li>
+						<li>化妆品贩卖价格区间漏斗图展示</li>
+					</ul>
+				</a>
+			</div>
+
+			<br />
+			<hr style="height:1px;border:none;border-top:1px dashed #bfbf60;" />
+			<div>
+<!--					<a href="../static/GDP.html" target="_blank">-->
+				<a href="{{ url_for('cloud') }}" rel="external nofollow">
+					<p>旅游生活服务</p>
+					<ul class="inner">
+						<li>用户旅游美食检索区</li>
+						<li>词云推荐区</li>
+					</ul>
+				</a>
+			</div>
+
+		</div>
+		<div class="main">
+			<div class="title" style="margin-top: 30px;">
+				<h2 style="position: absolute;left: 27.2%;top: 9.5%;color: #342f2b;">GDP-购物综合可视化简介</h2>
+			</div>
+			<div class="text" id="text">
+				<p>&nbsp;&nbsp;可视化（Visualization）是利用计算机图形学和图像处理技术，将数据转换成图形或图像在屏幕上显示出来，
+				并进行交互处理的理论、方法和技术。它涉及到计算机图形学、图像处理、计算机视觉、计算机辅助设计等多个领域，
+				成为研究数据表示、数据处理、决策分析等一系列问题的综合技术。目前正在飞速发展的虚拟现实技术也是以图形图像的可视化技术为依托的。
+				</p>
+				<p>&nbsp;&nbsp;<span style="font-weight: bold">国内生产总值（GDP）</span>是指按国家市场价格计算的一个国家（或地区）所有常住单位在一定时期内生产活动的最终成果，
+				它反映了一国（或地区）的经济实力和市场规模。我们通过对2019年与2020年各省GDP指数进行处理与可视化展示，明显客观地展现了两年的GDP变化
+				2月是中国的新年，是中国最隆重的传统节日，也是中国人民最盼望的节日之一。虽然经受了疫情的打击，但是这也丝毫不影响我们购物的激情。
+				我们采集了2020年2月份某化妆品品牌的销售情况，借此展现春节期间人们的化妆品购买热潮，以及交易价格等信息。</p>
+				<p> &nbsp;<span style="font-weight: bold"> 国内的旅游与美食：</span></p>
+				<p>	 我们在2020年经历了新冠疫情的困难时刻，国内的旅游形势也在这段时间内由于防控等因素有了明显的下滑。但是在形势转好之后，旅游的热情是一发不可收拾的，
+				据统计2020年度国内旅游人数28.79亿人次，国内旅游收入2.23万亿元，可以通过这些数据看出疫情并没有阻碍人们旅游的热情，在后面的时间里旅游业的发展也会
+				是越来越好。旅游也是我们大多数人给自己的心灵放个假的好机会，现代人习惯了繁忙的现代生活，快节奏和压力倍增，旅游是一个很合适的选择，无论是周末还是假期
+				都应该出去走走转转，拓宽自己的眼界。</p>
+				<p>   而在美食的方面，中国的美食是世界闻名的，四川的辣，重庆的麻，粤菜的鲜，东北菜的劲这些例子数不胜数了。并且现在已经是国际化的时代了，我们不必走出去太远就可以吃到世界各地的美味，
+				年轻人都喜欢在朋友圈晒晒自己与朋友一起分享的美味，在美食的传承过程中，更可以体现中华美食的博大精深。</p>
+			</div>
+		</div>
+	</body>
+</html>

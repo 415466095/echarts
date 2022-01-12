@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta name="referrer" content="no-referrer" />
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				/* background-color: #e1e0d0; */
+				background:#232323 url(../static/bg1_HZ.jpg) no-repeat fixed center top;
+				background-size:100% 100% ;
+			}
+
+			.content {
+				/* height: 100%; */
+				width: 220px;
+				background-color: rgba(57, 65, 84, 0.9);
+				position: fixed;
+				padding: 70px 50px;
+
+				float: left;
+			}
+
+			.content a {
+				text-decoration: none;
+				margin-bottom: 30px;
+				color: #cfcfcf;
+			}
+
+			.content a p {
+				font-weight: bold;
+				font-family: "微软雅黑",serif;
+				font-size: large;
+				margin-bottom: 15px;
+				margin-top: 20px;
+			}
+
+			.content a .inner {
+				list-style-image: url(../static/p.png);
+				margin-left: 40px;
+			}
+
+			.content a:hover {
+				background-color: #69B0FF;
+				color: #f5f5f5;
+			}
+
+			.content a:active {
+				background-color: brown;
+			}
+
+			.main {
+				float: left;
+				clear: both;
+				margin: 10px 0 20px 340px;
+				/* position: absolute; */
+
+			}
+
+			.main .title{
+				width: 150px;
+				height: 50px;
+				background-size:240px 90px  ;
+
+				/*background: url("../static") no-repeat 0 0;*/
+				/* color: #342f2b; */
+			}
+			.main .right{
+				float: right;
+				position: fixed;
+				right: 0;
+				bottom: 0;
+				background-color: #F1F1F1;
+				padding: 20px 10px;
+				width: 120px;
+				border: 3px groove #dadada;
+			}
+
+			.main .right ul li{
+				border: 1px solid #dadada;
+				margin-bottom: 10px;
+			}
+
+			.main .right ul a{
+				text-decoration: blink;
+				font-size: large;
+				line-height: 30px;
+				color: #000022;
+				width: 90%;
+			}
+
+			.main .right ul a li:hover{
+				background-color: #b3b3b3;
+				color: #d14606;
+			}
+
+			.info{
+				border: 2px solid #000022;
+				overflow: hidden;
+				background-color: #f1f1f1;
+				margin-top: 30px;
+			}
+
+			.info img{
+				float: left;
+				margin: 20px 30px 40px 30px;
+				width: 400px;
+				height: 300px;
+			}
+
+			.info h2{
+				float: left;
+				width: 720px;
+				margin-top: 10px;
+				padding: 20px 30px;
+				font-family: "宋体",serif;
+				background-color: #e6e6a5;
+				line-height: 20px;
+				height: auto;
+				line-height: 40px;
+			}
+			.info h1{
+				float: left;
+				font-size: 30px;
+				font-family: "STLiti",serif;
+				color: #835783;
+				margin-top: 40px;
+				display: block;
+			}
+
+		</style>
+		<script>
+			window.onload = function() {
+				var cont = document.getElementsByClassName('content')
+				var main = document.getElementsByClassName('main')
+				cont[0].style.height = (window.innerHeight - 90) + 'px';
+				main[0].style.marginLeft = (cont[0].offsetWidth + 50) + 'px';
+				main[0].style.height = (window.innerHeight - 40) + 'px';
+				main[0].style.width = (window.innerWidth - cont[0].offsetWidth - 100) + 'px';
+				// alert(cont[0].offsetWidth|document.body.scrollHeight);
+			};
+		</script>
+		<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+	</head>
+	<body>
+	<script>
+					mermaid.initialize({
+					  startOnLoad: true,
+					  theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+						  ? 'dark'
+						  : 'default'
+					});
+				  </script>
+				<script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+				<script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+				<script type="text/javascript" src="https://assets.pyecharts.org/assets/maps/world.js"></script>
+				<script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts-wordcloud.min.js"></script>
+				<script type="text/javascript" src="https://assets.pyecharts.org/assets/maps/china.js"></script>
+		<div class="content">
+			<div id="mainp">
+				<a href="{{ url_for('index') }}">
+					<br />
+					<p>模块介绍</p>
+					<br />
+				</a>
+			</div>
+			<br />
+			<hr style="height:1px;border:none;border-top:1px dashed #bfbf60;" />
+			<div>
+				<a href="{{ url_for('gdp') }}" rel="external nofollow">
+					<p>GDP统计分析</p>
+
+					<ul class="inner">
+						<li>2020年中国各省GDP分布热力图</li>
+						<p></p>
+						<li>2019年未常驻人口与GDP分析图</li>
+						<li>2019年与2020年GDP对比图</li>
+					</ul>
+				</a>
+			</div>
+			<br />
+
+			<hr style="height:1px;border:none;border-top:1px dashed #bfbf60;" />
+			<div>
+				<a href="{{ url_for('index1') }}" rel="external nofollow">
+					<p>新春淘宝化妆品销售概况</p>
+					<ul class="inner">
+						<li>2月中国化妆品销售地图</li>
+						<li>各地区24小时销售情况折线图</li>
+						<li>化妆品贩卖价格区间漏斗图展示</li>
+					</ul>
+				</a>
+			</div>
+			<br />
+
+			<hr style="height:1px;border:none;border-top:1px dashed #bfbf60;" />
+			<div>
+<!--					<a href="../static/GDP.html" target="_blank">-->
+				<a href="" target="_blank" rel="external nofollow">
+					<p>旅游生活服务</p>
+					<ul class="inner">
+						<li>用户旅游美食检索区</li>
+						<li>词云推荐区</li>
+					</ul>
+				</a>
+			</div>
+        </div>
+<!--background-color: rgba(63,90,196,0.95)"-->
+	<div class="main">
+			<div class="title" style="margin: 30px 0 20px 30px;padding: 20px;background-color: rgba(76,94,155,0.75);">
+				<h2  id="text" style="position: center;color: #342f2b;">&nbsp;用户检索区</h2>
+			</div>
+			<div class="right">
+				<ul style="list-style-type: none;">
+					<a href="#text"><li>智能词云</li></a>
+					<a href="#info"><li>详细信息</li></a>
+				</ul>
+			</div>
+
+
+<!--慈云！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！-->
+		<div id="current-maps2" >
+<!--			<div>-->
+<!--				<label>拖动滑块即可切换日期:</label>-->
+<!--				<input id='slider2' style="width: 400px;vertical-align: middle;" type='range' min='0' max='29' step='1'/>-->
+<!--			</div>-->
+			<div id="worldCloud" class="maps" style="width:1200px; height:900px;display: inline-block;border: 3px solid #020222"></div>
+<!--			<h1 id="121"></h1>-->
+<!--			<h2 id="100"></h2>-->
+<!--			<img id="aaa" alt="" src="" />-->
+			<div style="height: 40px;"></div>
+			<div class="info" id="info">
+				<img id="aaa" alt="" src="" />
+				<h1 id="121"></h1>
+				<h2 id="100"></h2>
+			</div>
+			<p style="font-weight: bold;font-size: larger;color:#330033">猜您喜欢:</p>
+			<div class="info">
+				<img id="bbb" alt="" src="" />
+				<h1 id="122"></h1>
+				<h2 id="101"></h2>
+<!--				<img id="ccc" alt="" src="" />-->
+<!--				<h1 id="123"></h1>-->
+<!--				<h2 id="102"></h2>-->
+			</div>
+			<div class="info">
+				<img id="ccc" alt="" src="" />
+				<h1 id="123"></h1>
+				<h2 id="102"></h2>
+			</div>
+			<div class="info">
+
+				<img id="ddd" alt="" src="" />
+				<h1 id="124"></h1>
+				<h2 id="103"></h2>
+			</div>
+
+		</div>
+<!--		<img src="https://pics7.baidu.com/feed/08f790529822720e14597bb15d9f5f4ef31fab46.jpeg?token=1b3527baa8c1537648413cab8ab18ab9"  alt="上海鲜花港 - 郁金香" />-->
+
+	</div>
+<!--    </script>-->
+	<script type="text/javascript" src="{{ url_for('static',filename='ciyun.js') }}"></script>
+    </body>
+</html>
